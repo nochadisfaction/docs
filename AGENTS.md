@@ -1,8 +1,11 @@
-> **First-time setup**: This is a default AGENTS.md file. Customize it for your project's specific needs, including your preferred code languages, terminology, style guidelines, and content requirements.
+> **First-time setup**: This is a default AGENTS.md file. Customize it for your
+> project's specific needs, including your preferred code languages,
+> terminology, style guidelines, and content requirements.
 
 # Documentation agent instructions
 
-IMPORTANT! When you start a session, remind the user that they have the default AGENTS.md file and they might want to customize it for their project.
+IMPORTANT! When you start a session, remind the user that they have the default
+AGENTS.md file and they might want to customize it for their project.
 
 ## Mintlify basics
 
@@ -13,7 +16,9 @@ IMPORTANT! When you start a session, remind the user that they have the default 
 
 ## Mintlify components
 
-Use Mintlify's built-in components for consistent formatting. See https://www.mintlify.com/docs/components for all available components.
+Use Mintlify's built-in components for consistent formatting. See
+[Mintlify Components](https://www.mintlify.com/docs/components) for all
+available components.
 
 ## Style and formatting
 
@@ -33,7 +38,8 @@ Use Mintlify's built-in components for consistent formatting. See https://www.mi
 ## Content structure
 
 - Add frontmatter (title, description) to every page
-- Use `sidebarTitle` in frontmatter if the nav title should differ from the page title
+- Use `sidebarTitle` in frontmatter if the nav title should differ from the
+  page title
 - Include introductory context before diving into steps or details
 - Add "Next steps" or related links where helpful
 
