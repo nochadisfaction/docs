@@ -30,7 +30,7 @@ Authorization: Bearer <token>
 
 Tokens are issued on login and expire according to your
 environment configuration. See
-[Getting Started](getting-started.mdx) for setup.
+[/developers/getting-started](/developers/getting-started) for setup.
 
 ## Training Sessions
 
@@ -129,9 +129,9 @@ environment configuration. See
           "Consistent use of reflective listening",
           "Appropriate pacing in early session"
         ],
-        "improvements": [
-          "Missed indirect crisis signal at message 4",
-          "Redirected before fully validating at message 7"
+        "growthAreas": [
+          "Directness when checking child safety",
+          "Premature closure in middle phase"
         ],
         "emotionalTimeline": [
           { "messageIndex": 1, "clientSadness": 0.7, "clientTrust": 0.2 },
@@ -282,17 +282,17 @@ X-RateLimit-Reset: 1708000000
 ## Related Reading
 
 <CardGroup cols={3}>
-  <Card title="Architecture" icon="sitemap" href="architecture.mdx">
+  <Card title="Architecture" icon="sitemap" href="/developers/architecture">
     System design context.
   </Card>
-  <Card title="Getting Started" icon="rocket" href="getting-started.mdx">
+  <Card
+    title="Getting Started"
+    icon="rocket"
+    href="/developers/getting-started"
+  >
     Local setup.
   </Card>
-  <Card
-    title="Platform Overview"
-    icon="circle-info"
-    href="../platform/overview.mdx"
-  >
+  <Card title="Platform Overview" icon="circle-info" href="/platform/overview">
     How it all works.
   </Card>
 </CardGroup>

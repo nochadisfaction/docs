@@ -52,19 +52,19 @@ well-defined interfaces.
     (Astro island state)
     **Data Fetching**: TanStack Query
 
-    The frontend is server-rendered with Astro for fast initial
-    loads, with React components hydrated on the client for
-    interactive features like The Empathy Gym™ training interface.
+The frontend is server-rendered with Astro for fast initial
+loads, with React components hydrated on the client for
+interactive features like The Empathy Gym™ training interface.
 
-    **Key directories**:
+**Key directories**:
 
-    | Path              | Contents                            |
-    | :---------------- | :---------------------------------- |
-    | `src/pages/`      | File-based routes                   |
-    | `src/components/` | React UI components                 |
-    | `src/simulator/`  | Empathy Gym™ components             |
-    | `src/lib/`        | Business logic, services, utilities |
-    | `src/styles/`     | Design tokens, global styles        |
+| Path              | Contents                            |
+| :---------------- | :---------------------------------- |
+| `src/pages/`      | File-based routes                   |
+| `src/components/` | React UI components                 |
+| `src/simulator/`  | Empathy Gym™ components             |
+| `src/lib/`        | Business logic, services, utilities |
+| `src/styles/`     | Design tokens, global styles        |
 
   </Accordion>
 
@@ -73,18 +73,18 @@ well-defined interfaces.
     **Framework**: FastAPI
     **Package Manager**: uv
 
-    The emotional intelligence engine — handles emotion analysis,
-    client response generation, therapeutic evaluation, and
-    crisis detection.
+The emotional intelligence engine — handles emotion analysis,
+client response generation, therapeutic evaluation, and
+crisis detection.
 
-    **Key directories**:
+**Key directories**:
 
-    | Path                    | Contents                  |
-    | :---------------------- | :------------------------ |
-    | `ai/core/`              | Core AI modules           |
-    | `ai/training/`          | Model training & tuning   |
-    | `ai/academic_sourcing/` | Journal research pipeline |
-    | `ai/api/`               | API endpoints             |
+| Path                    | Contents                  |
+| :---------------------- | :------------------------ |
+| `ai/core/`              | Core AI modules           |
+| `ai/training/`          | Model training & tuning   |
+| `ai/academic_sourcing/` | Journal research pipeline |
+| `ai/api/`               | API endpoints             |
 
   </Accordion>
 
@@ -98,9 +98,9 @@ well-defined interfaces.
     Background processing for tasks that don't need
     immediate results:
 
-    - Training data preparation
-    - Analytics aggregation
-    - Scheduled maintenance tasks
+- Training data preparation
+- Analytics aggregation
+- Scheduled maintenance tasks
 
   </Accordion>
 
@@ -108,6 +108,7 @@ well-defined interfaces.
     Conversation context persistence. Maintains state across
     interactions so training scenarios can build over time.
   </Accordion>
+
 </AccordionGroup>
 
 ## Technology Decisions
@@ -218,16 +219,16 @@ Run everything with `pnpm test:all`.
     `pnpm dev:all-services` or `pnpm docker:up`
   </Tab>
   <Tab title="Production">
-    Docker Compose orchestration with environment-specific
-    configurations. Kubernetes support is on the roadmap.
+  Docker Compose orchestration with environment-specific
+  configurations. Kubernetes support is on the roadmap.
 
-    All deployments go through:
+All deployments go through:
 
-    1. `pnpm check:all` — Lint + typecheck + format
-    2. `pnpm test:all` — Full test suite
-    3. `pnpm security:scan` — Security audit
-    4. Build verification
-    5. Staged deployment
+1. `pnpm check:all` — Lint + typecheck + format
+2. `pnpm test:all` — Full test suite
+3. `pnpm security:scan` — Security audit
+4. Build verification
+5. Staged deployment
 
   </Tab>
 </Tabs>
@@ -235,17 +236,17 @@ Run everything with `pnpm test:all`.
 ## Related Reading
 
 <CardGroup cols={3}>
-  <Card title="Getting Started" icon="rocket" href="getting-started.mdx">
+  <Card
+    title="Getting Started"
+    icon="rocket"
+    href="/developers/getting-started"
+  >
     Set up your environment.
   </Card>
-  <Card title="API Reference" icon="code" href="api-reference.mdx">
+  <Card title="API Reference" icon="code" href="/developers/api-reference">
     Work with our APIs.
   </Card>
-  <Card
-    title="Platform Overview"
-    icon="sitemap"
-    href="../platform/overview.mdx"
-  >
+  <Card title="Platform Overview" icon="sitemap" href="/platform/overview">
     The non-technical version.
   </Card>
 </CardGroup>
