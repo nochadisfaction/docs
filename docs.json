@@ -15,7 +15,12 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["index", "quickstart", "concepts", "manifesto"]
+            "pages": [
+              "index",
+              "quickstart",
+              "concepts",
+              "manifesto"
+            ]
           },
           {
             "group": "The Platform",
@@ -84,7 +89,9 @@
           },
           {
             "group": "Training",
-            "pages": ["guides/training/PIXEL-MODEL-TRAINING-HUB"]
+            "pages": [
+              "guides/training/PIXEL-MODEL-TRAINING-HUB"
+            ]
           },
           {
             "group": "User Guides",
@@ -113,32 +120,6 @@
               "api-reference/session-management",
               "api-reference/analytics"
             ]
-          },
-          {
-            "group": "Extended API",
-            "pages": [
-              "api/README",
-              "api/journal-research-api",
-              "api/therapist-dashboard-api",
-              "api/registration"
-            ]
-          },
-          {
-            "group": "MCP Server",
-            "pages": [
-              "api/mcp-server/README",
-              "api/mcp-server/prompts",
-              "api/mcp-server/resources",
-              "api/mcp-server/tools"
-            ]
-          },
-          {
-            "group": "Embedding Agent",
-            "pages": ["api/embedding-agent/README"]
-          },
-          {
-            "group": "Bias Analysis",
-            "pages": ["api/bias-analysis/README"]
           }
         ]
       },
@@ -257,11 +238,16 @@
           },
           {
             "group": "Development",
-            "pages": ["development/README"]
+            "pages": [
+              "development/README"
+            ]
           },
           {
             "group": "Features",
-            "pages": ["features/README", "features/eval-gating"]
+            "pages": [
+              "features/README",
+              "features/eval-gating"
+            ]
           },
           {
             "group": "Design System",
@@ -316,7 +302,9 @@
           },
           {
             "group": "Governance",
-            "pages": ["governance/provenance_storage_plan"]
+            "pages": [
+              "governance/provenance_storage_plan"
+            ]
           },
           {
             "group": "Migration",
@@ -328,7 +316,10 @@
           },
           {
             "group": "Security",
-            "pages": ["security/safety", "security/credential-files-security"]
+            "pages": [
+              "security/safety",
+              "security/credential-files-security"
+            ]
           },
           {
             "group": "Audits",
@@ -356,10 +347,16 @@
       ]
     }
   },
-  "logo": { "light": "/logo/light.svg", "dark": "/logo/dark.svg" },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
   "navbar": {
     "links": [
-      { "label": "Support", "href": "mailto:support@pixelatedempathy.com" }
+      {
+        "label": "Support",
+        "href": "mailto:support@pixelatedempathy.com"
+      }
     ],
     "primary": {
       "type": "button",
