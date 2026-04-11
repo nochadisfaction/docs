@@ -398,25 +398,25 @@ Validate JWT tokens using the JSON Web Key Set (JWKS) published at:
 ## Security best practices
 
 <AccordionGroup>
-  <Accordion title="Store secrets securely">
+  <Accordion title='Store secrets securely'>
     Use environment variables or a secrets manager (AWS Secrets Manager,
     HashiCorp Vault) for API keys and client secrets. Never commit secrets to
     version control.
   </Accordion>
-  <Accordion title="Implement token refresh proactively">
+  <Accordion title='Implement token refresh proactively'>
     Refresh access tokens 5 minutes before expiration rather than waiting for a
     `401` response. This prevents failed requests and improves user experience.
   </Accordion>
-  <Accordion title="Use the principle of least privilege">
+  <Accordion title='Use the principle of least privilege'>
     Request only the scopes your application needs. Create API keys with the
     minimum permissions required for each integration.
   </Accordion>
-  <Accordion title="Monitor and rotate regularly">
+  <Accordion title='Monitor and rotate regularly'>
     Review API key usage monthly. Rotate keys at least quarterly, or immediately
     if a key may have been compromised. Enable key expiration dates for
     temporary integrations.
   </Accordion>
-  <Accordion title="Validate tokens server-side">
+  <Accordion title='Validate tokens server-side'>
     Always verify JWT signatures using the JWKS endpoint on your server. Never
     rely on client-side token validation for authorization decisions.
   </Accordion>
@@ -425,14 +425,14 @@ Validate JWT tokens using the JSON Web Key Set (JWKS) published at:
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="API overview" icon="book" href="/api-reference/introduction">
+  <Card title='API overview' icon='book' href='/api-reference/introduction'>
     Review the full API reference including rate limits, error codes, and
     pagination.
   </Card>
   <Card
-    title="Bias Analysis API"
-    icon="scale-balanced"
-    href="/api-reference/bias-analysis"
+    title='Bias Analysis API'
+    icon='scale-balanced'
+    href='/api-reference/bias-analysis'
   >
     Start making your first API calls with the bias analysis endpoint.
   </Card>

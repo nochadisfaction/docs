@@ -1,8 +1,8 @@
 ---
 title: 'Implementing Agent Note Collaboration'
 description: >
-  A practical implementation guide for building a production-ready turn-ledger for
-  collaborative agents.
+  A practical implementation guide for building a production-ready turn-ledger
+  for collaborative agents.
 sidebarTitle: 'Implementation Guide'
 ---
 
@@ -23,36 +23,34 @@ import {
   InMemoryTurnLedger,
   createTurnRecord,
   formatTurnError,
-} from "@lib/agent-note-collab";
+} from '@lib/agent-note-collab'
 
-const ledger = new InMemoryTurnLedger();
+const ledger = new InMemoryTurnLedger()
 
 try {
   const result = ledger.submitTurn({
-    turnId: "",
-    artifactId: "docs/agent-note-collaboration.md",
-    phase: "Observe",
-    role: "scribe",
-    agentId: "agent-alpha",
+    turnId: '',
+    artifactId: 'docs/agent-note-collaboration.md',
+    phase: 'Observe',
+    role: 'scribe',
+    agentId: 'agent-alpha',
     confidence: 0.82,
-    assumptions: ["Context parser output is fresh."],
-    openQuestions: ["What is the target confidence threshold?"],
-    decision: "Start with artifact-level handoff for draft proposal.",
-    evidence: ["agent-note-collaboration.md#section-observation"],
-    requestedAction: "escalate",
-  });
+    assumptions: ['Context parser output is fresh.'],
+    openQuestions: ['What is the target confidence threshold?'],
+    decision: 'Start with artifact-level handoff for draft proposal.',
+    evidence: ['agent-note-collaboration.md#section-observation'],
+    requestedAction: 'escalate',
+  })
 
   if (!result.ok) {
-    console.error("Turn rejected:", result.errors);
+    console.error('Turn rejected:', result.errors)
   } else {
-    console.log("Stored:", result.turn.turnId, "nextPhase:", result.nextPhase);
+    console.log('Stored:', result.turn.turnId, 'nextPhase:', result.nextPhase)
   }
 } catch (error) {
-  const failure = formatTurnError(error);
-  console.error("Validation failed:", failure.errors);
+  const failure = formatTurnError(error)
+  console.error('Validation failed:', failure.errors)
 }
-
-
 ```
 
 ## Suggested next engineering step

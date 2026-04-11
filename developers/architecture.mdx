@@ -185,8 +185,6 @@ We use **Zod** for runtime validation across all service boundaries. Key
 validation rules:
 
 ```typescript
-
-
 // Emotion scores MUST be 0.0–1.0
 const EmotionScore = z.number().min(0).max(1)
 
@@ -196,8 +194,6 @@ const MessageInput = z.object({
   sessionId: z.string().uuid(),
   timestamp: z.string().datetime(),
 })
-
-
 ```
 
 <Warning>

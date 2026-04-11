@@ -46,8 +46,6 @@ interface EmotionVector {
   anticipation: number // Expectation, interest, vigilance
 }
 // All values normalized 0.0 – 1.0
-
-
 ```
 
 Each emotion is scored as a continuous value between 0.0 (absent) and 1.0
@@ -95,7 +93,7 @@ dominance axis:
 
     Measures the positive or negative quality of the emotional experience.
 
-``` text
+````text
 
 
     Positive valence (+) ← joy, trust, anticipation
@@ -225,7 +223,7 @@ over time:
                     Low Arousal
 
 
-```
+````
 
 The `MultidimensionalEmotionMapper` tracks movement through this space across a
 session, detecting:
@@ -334,8 +332,6 @@ The system detects significant emotional transitions — moments when the client
 emotional state shifts meaningfully:
 
 ```typescript
-
-
 interface EmotionTransition {
   from: EmotionDimensions // Starting emotional state
   to: EmotionDimensions // New emotional state
@@ -343,8 +339,6 @@ interface EmotionTransition {
   intensity: number // Magnitude of the shift
   timestamp: string // When the transition occurred
 }
-
-
 ```
 
 Transitions are flagged when the Euclidean distance between consecutive
@@ -430,8 +424,6 @@ The `EmotionSynthesizer` creates realistic emotional responses based on
 therapeutic context:
 
 ```typescript
-
-
 type EmotionTransitionContext =
   | 'therapist_validates' // → joy↑, sadness↓, anger↓
   | 'therapist_challenges' // → anger↑ initially, then trust↑ if done well
@@ -444,8 +436,6 @@ type EmotionTransitionContext =
   | 'patient_resists' // → anger↑, trust↓
   | 'goal_achieved' // → joy↑, anticipation↑, trust↑
   | 'setback_experienced' // → sadness↑, anger↑, anticipation↓
-
-
 ```
 
 Each context triggers specific emotion adjustments with configurable decay

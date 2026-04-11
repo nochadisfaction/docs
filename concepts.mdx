@@ -53,7 +53,8 @@ more EARS phases.
     - Avoiding minimization, dismissal, or premature reassurance
 
     **Example:** *"It makes complete sense that you'd feel anxious after what happened. Anyone in your situation would
-feel that way."*
+
+feel that way."\*
 
   </Step>
   <Step title="Reflect">
@@ -67,7 +68,8 @@ feel that way."*
     - Identifying patterns or themes the client may not see
 
     **Example:** *"So what I'm hearing is that every time you try to set a boundary with your mother, you end up feeling
-guilty — and that guilt keeps pulling you back into the same pattern."*
+
+guilty — and that guilt keeps pulling you back into the same pattern."\*
 
   </Step>
   <Step title="Support">
@@ -82,7 +84,9 @@ guilty — and that guilt keeps pulling you back into the same pattern."*
     - Reinforcing the client's existing strengths and resilience
 
     **Example:** *"You've already shown real courage by recognizing this pattern. Would you be open to exploring some
-ways we could practice setting that boundary in a way that feels more manageable?"*
+
+ways we could practice setting that boundary in a way that feels more
+manageable?"\*
 
   </Step>
 </Steps>
@@ -243,11 +247,13 @@ Each dimension is scored on a `0.0` to `1.0` normalized scale:
     preference for novelty versus routine.
 
     - **High (0.7–1.0):** Imaginative, curious, willing to explore abstract ideas and emotions. More receptive to
-unconventional therapeutic approaches.
-    - **Low (0.0–0.3):** Practical, conventional, prefers concrete guidance. May resist exploratory or insight-oriented
-techniques.
+
+unconventional therapeutic approaches. - **Low (0.0–0.3):** Practical,
+conventional, prefers concrete guidance. May resist exploratory or
+insight-oriented techniques.
 
     **Therapeutic implication:** High-openness clients may engage more readily with psychodynamic exploration;
+
 low-openness clients may prefer structured CBT or behavioral approaches.
 
   </Tab>
@@ -256,36 +262,43 @@ low-openness clients may prefer structured CBT or behavioral approaches.
     goal-directed behavior.
 
     - **High (0.7–1.0):** Organized, reliable, follows through on homework assignments. May be self-critical or
-perfectionistic.
-    - **Low (0.0–0.3):** Spontaneous, flexible, may struggle with treatment compliance. May miss appointments or forget
-coping strategies.
+
+perfectionistic. - **Low (0.0–0.3):** Spontaneous, flexible, may struggle with
+treatment compliance. May miss appointments or forget coping strategies.
 
     **Therapeutic implication:** High-conscientiousness clients respond well to structured treatment plans;
-low-conscientiousness clients may need more frequent check-ins and simplified assignments.
+
+low-conscientiousness clients may need more frequent check-ins and simplified
+assignments.
 
   </Tab>
   <Tab title="Extraversion">
     **Extraversion** measures sociability, assertiveness, and positive emotionality.
 
     - **High (0.7–1.0):** Talkative, energetic, seeks social stimulation. May use verbosity to avoid deeper emotional
+
+processing. - **Low (0.0–0.3):** Reserved, reflective, needs more time and
+silence to process. May be mistaken for being resistant when they're actually
 processing.
-    - **Low (0.0–0.3):** Reserved, reflective, needs more time and silence to process. May be mistaken for being
-resistant when they're actually processing.
 
     **Therapeutic implication:** Introverted clients benefit from longer pauses and less directive questioning;
-extraverted clients may need gentle redirection from storytelling to emotional processing.
+
+extraverted clients may need gentle redirection from storytelling to emotional
+processing.
 
   </Tab>
   <Tab title="Agreeableness">
     **Agreeableness** measures cooperation, trust, and prosocial behavior.
 
     - **High (0.7–1.0):** Trusting, cooperative, eager to please. May suppress disagreement or negative emotions to
-maintain harmony.
-    - **Low (0.0–0.3):** Skeptical, competitive, challenges the therapist's authority. May present as argumentative or
-confrontational.
+
+maintain harmony. - **Low (0.0–0.3):** Skeptical, competitive, challenges the
+therapist's authority. May present as argumentative or confrontational.
 
     **Therapeutic implication:** Highly agreeable clients may need explicit permission to express negative feelings;
-low-agreeableness clients may need extra rapport-building before accepting therapeutic interventions.
+
+low-agreeableness clients may need extra rapport-building before accepting
+therapeutic interventions.
 
   </Tab>
   <Tab title="Neuroticism">
@@ -293,13 +306,15 @@ low-agreeableness clients may need extra rapport-building before accepting thera
     vulnerability to stress.
 
     - **High (0.7–1.0):** Emotionally volatile, anxiety-prone, easily overwhelmed. May require more grounding,
-validation, and emotional regulation support.
-    - **Low (0.0–0.3):** Emotionally stable, resilient, even-tempered. May have difficulty identifying or articulating
-emotional experiences.
+
+validation, and emotional regulation support. - **Low (0.0–0.3):** Emotionally
+stable, resilient, even-tempered. May have difficulty identifying or
+articulating emotional experiences.
 
     **Therapeutic implication:** High-neuroticism clients benefit from emotion regulation techniques (DBT skills,
-grounding) before cognitive work. Challenging interventions should be introduced carefully, as these clients may not
-tolerate confrontation well.
+
+grounding) before cognitive work. Challenging interventions should be introduced
+carefully, as these clients may not tolerate confrontation well.
 
   </Tab>
 </Tabs>
@@ -347,8 +362,6 @@ Every detected emotional state is characterized by three dimensions:
 Here's how a client statement might be scored:
 
 ```json text
-
-
 {
   "statement": "I can't believe she said that to me. I'm shaking. I don't even know what to do.",
   "primary_emotion": "anger",
@@ -359,8 +372,6 @@ Here's how a client statement might be scored:
   "dyad": "Outrage",
   "confidence": 0.91
 }
-
-
 ```
 
 The `confidence` field (`0.0`–`1.0`) indicates how certain the model is in its
@@ -438,7 +449,9 @@ are powerful indicators of therapeutic effectiveness.
     correlates them with client engagement and alliance strength.
 
     Tone is measured through linguistic markers (word choice, sentence structure, hedging language) and, when voice mode
-is active, through acoustic features (pitch variation, speaking rate, volume dynamics).
+
+is active, through acoustic features (pitch variation, speaking rate, volume
+dynamics).
 
   </Accordion>
 
@@ -470,6 +483,7 @@ is active, through acoustic features (pitch variation, speaking rate, volume dyn
     - **Under-reciprocity:** Therapist appears flat or disconnected when the client is in distress → damages alliance.
     - **Over-reciprocity:** Therapist becomes as emotionally activated as the client → loses therapeutic presence.
     - **Calibrated reciprocity:** Therapist conveys understanding of the emotional weight while remaining a stable,
+
 regulated presence → strengthens alliance.
 
   </Accordion>
@@ -479,12 +493,14 @@ regulated presence → strengthens alliance.
     distinguishes between:
 
     - **Productive silence** — The client is processing, integrating, or gathering courage to share something difficult.
-The therapist holds space without interrupting.
-    - **Uncomfortable silence** — An awkward gap where neither party knows how to proceed. Often indicates a missed
-therapeutic moment.
-    - **Resistant silence** — The client is disengaging, shutting down, or expressing passive resistance.
+
+The therapist holds space without interrupting. - **Uncomfortable silence** — An
+awkward gap where neither party knows how to proceed. Often indicates a missed
+therapeutic moment. - **Resistant silence** — The client is disengaging,
+shutting down, or expressing passive resistance.
 
     The appropriate therapeutic response differs for each type. Feedback reports highlight silence patterns and whether
+
 the therapist responded effectively.
 
   </Accordion>

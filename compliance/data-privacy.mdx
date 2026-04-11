@@ -27,22 +27,22 @@ controls are enforced at the infrastructure level, not just the application
 level.
 
 <CardGroup cols={2}>
-  <Card title="End-to-End Encryption" icon="lock">
+  <Card title='End-to-End Encryption' icon='lock'>
     All data encrypted with AES-256-GCM at rest and TLS 1.3 in transit. PHI is
     encrypted at the application layer *before* reaching the database — even
     database administrators cannot read raw PHI.
   </Card>
-  <Card title="PII Filtering at Ingestion" icon="filter">
+  <Card title='PII Filtering at Ingestion' icon='filter'>
     The GeminiHindsightManager filters all PII from data before it enters the AI
     memory system. Names, emails, phone numbers, SSNs, and other identifiers are
     scrubbed or replaced with anonymized placeholders.
   </Card>
-  <Card title="Anonymized Identifiers" icon="fingerprint">
+  <Card title='Anonymized Identifiers' icon='fingerprint'>
     Internal systems reference users by anonymized IDs only. No human-readable
     names, emails, or other PII appear in logs, monitoring dashboards, error
     reports, or internal documentation.
   </Card>
-  <Card title="Minimum Necessary Access" icon="user-lock">
+  <Card title='Minimum Necessary Access' icon='user-lock'>
     Every data access is scoped to the minimum information required for the
     specific operation. Role-based access controls enforce this at the API,
     database, and service layers.

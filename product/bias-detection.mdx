@@ -309,7 +309,6 @@ For live training sessions, the Bias Detection Engine operates in streaming
 mode:
 
 ```typescript
-
 // Real-time bias analysis during a training session
 const engine = new BiasDetectionEngine({
   thresholds: { warning: 0.3, high: 0.6, critical: 0.8 },
@@ -346,7 +345,6 @@ const result = await engine.analyzeSession({
 // result.overallBiasScore: 0.0 - 1.0
 // result.alertLevel: "low" | "medium" | "high" | "critical"
 // result.recommendations: string[]
-
 ```
 
 <Warning>

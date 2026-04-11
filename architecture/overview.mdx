@@ -74,14 +74,16 @@ responsibility domain.
 ## Astro 5 + React 19 + TypeScript
 
     Server-side rendered application delivering the trainee interface, supervisor dashboard, and administrative panels.
-Astro's island architecture ensures minimal JavaScript is shipped to the client while React handles interactive
-components.
+
+Astro's island architecture ensures minimal JavaScript is shipped to the client
+while React handles interactive components.
 
   </Card>
   <Card title="API Gateway" icon="shield-halved">
 ## Node.js + Express
 
     Central entry point for all client requests. Handles authentication (JWT validation), rate limiting, CORS
+
 enforcement, request logging, and route delegation to downstream services.
 
   </Card>
@@ -89,42 +91,52 @@ enforcement, request logging, and route delegation to downstream services.
 ## Python + PyTorch
 
     The Emotional Intelligence Engine — the analytical heart of the platform. Maps conversations using Plutchik's Wheel
-of Emotions across eight primary dimensions, tracking valence, arousal, and dominance in real time.
+
+of Emotions across eight primary dimensions, tracking valence, arousal, and
+dominance in real time.
 
   </Card>
   <Card title="Bias Detection" icon="scale-balanced">
 ## Python + Fairlearn + NumPy
 
     Continuous analysis of therapeutic sessions for demographic bias across gender, age, ethnicity, and language.
-Produces fairness metrics (demographic parity, equalized odds, treatment equality) and generates actionable
-recommendations.
+
+Produces fairness metrics (demographic parity, equalized odds, treatment
+equality) and generates actionable recommendations.
 
   </Card>
   <Card title="Journal Research Pipeline" icon="book-open-reader">
 ## Python + FastAPI + HuggingFace
 
     Automated pipeline for sourcing, processing, and integrating academic research from PubMed, arXiv, and IEEE Xplore.
-Powers evidence-based feedback and keeps therapeutic guidance current with published literature.
+
+Powers evidence-based feedback and keeps therapeutic guidance current with
+published literature.
 
   </Card>
   <Card title="Training Platform" icon="dumbbell">
 ## React + Three.js + WebSocket
 
     The Empathy Gym™ simulation engine. Renders immersive training scenarios with 3D visualization, real-time WebSocket
-communication for live session feedback, and dynamic difficulty adjustment based on trainee performance.
+
+communication for live session feedback, and dynamic difficulty adjustment based
+on trainee performance.
 
   </Card>
   <Card title="MCP Memory Server" icon="database">
 ## Python + FastAPI
 
     Central memory authority implementing the Model Context Protocol (MCP). Manages long-term memory via Hindsight + Google
-Gemini integration with PII filtering, crisis detection, and HIPAA-compliant storage.
+
+Gemini integration with PII filtering, crisis detection, and HIPAA-compliant
+storage.
 
   </Card>
   <Card title="Data Layer" icon="layer-group">
 ## MongoDB + Redis + S3 + Qdrant
 
     Multi-store data architecture. MongoDB for persistent document storage, Redis for session caching and real-time
+
 state, S3/R2 for blob storage, and Qdrant for vector-based memory search.
 
   </Card>
@@ -193,8 +205,6 @@ The Express-based API gateway serves as the single entry point for all client
 traffic, enforcing security policies before requests reach downstream services.
 
 ```typescript
-
-
 // Security middleware chain
 app.use(helmet()) // Security headers
 app.use(cors({ credentials: true })) // CORS with credentials
@@ -213,8 +223,6 @@ app.use(authMiddleware)
 app.use('/api/documents', documentRoutes)
 app.use('/api/projects', projectRoutes)
 app.use('/api/users', userRoutes)
-
-
 ```
 
 <Info>
@@ -236,6 +244,7 @@ Surprise, Sadness, Disgust, Anger, and Anticipation. Each emotion is scored on a
 intensity, valence, and arousal dimensions.
 
     The mapper also detects **complex emotional dyads** — compound emotions formed by combining primary emotions (e.g.,
+
 Joy + Trust = Love, Fear + Surprise = Awe).
 
   </Accordion>
@@ -246,7 +255,9 @@ Joy + Trust = Love, Fear + Surprise = Awe).
     - **Dominance**: Submissive ↔ Dominant (0.0 to 1.0)
 
     This enables detection of subtle emotional shifts that categorical models miss — like the difference between quiet
-sadness (low arousal, low dominance) and frustrated anger (high arousal, high dominance).
+
+sadness (low arousal, low dominance) and frustrated anger (high arousal, high
+dominance).
 
   </Accordion>
   <Accordion title="Transition Detection" icon="arrows-spin">
@@ -331,10 +342,10 @@ asynchronous WebSocket connections, depending on latency requirements.
   </Tab>
   <Tab title='Internal (Service-to-Service)'>
     Direct internal calls between co-located services: - **MCP Server →
-    GeminiHindsightManager**: Memory storage with PII filtering - **Pixel Inference
-    Service → GeminiHindsightManager**: Context retrieval for response generation -
-    **Bias Detection → EI Engine**: Emotional context for bias severity
-    assessment
+    GeminiHindsightManager**: Memory storage with PII filtering - **Pixel
+    Inference Service → GeminiHindsightManager**: Context retrieval for response
+    generation - **Bias Detection → EI Engine**: Emotional context for bias
+    severity assessment
   </Tab>
 </Tabs>
 
@@ -352,7 +363,7 @@ asynchronous WebSocket connections, depending on latency requirements.
 | **AI/ML**    | FastAPI                | 0.100+    | High-performance API framework      |
 | **AI/ML**    | Fairlearn              | Latest    | Fairness metrics and bias detection |
 | **AI/ML**    | HuggingFace            | Latest    | NLP models, research pipeline       |
-| **Memory**   | Hindsight                   | Latest    | Long-term vector memory             |
+| **Memory**   | Hindsight              | Latest    | Long-term vector memory             |
 | **Memory**   | Google Gemini          | 2.0 Flash | PII filtering, response generation  |
 | **Data**     | MongoDB                | 7.x       | Primary document store              |
 | **Data**     | PostgreSQL             | 15.x      | Relational data (CMS, analytics)    |
@@ -373,9 +384,9 @@ asynchronous WebSocket connections, depending on latency requirements.
     compliance is architectural, not bolted on.
   </Card>
   <Card title='Graceful Degradation' icon='life-ring'>
-    Every external dependency has a fallback. Memory system: Gemini → Hindsight →
-    NullMemory. AI inference: Primary model → Fallback model → Cached response.
-    Database: Primary → Read replica → Cache.
+    Every external dependency has a fallback. Memory system: Gemini → Hindsight
+    → NullMemory. AI inference: Primary model → Fallback model → Cached
+    response. Database: Primary → Read replica → Cache.
   </Card>
   <Card title='Observable by Default' icon='chart-line'>
     Every service emits structured logs, health checks, and Prometheus metrics.

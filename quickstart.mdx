@@ -41,6 +41,7 @@ Clone the repo, install dependencies, and spin up the full platform locally.
 ## 🧠 For Therapists & Counselors
 
 > _Get from sign-up to your first AI training session in under five minutes._
+
 <Steps>
 
 <Step title="1. Create your account">
@@ -132,6 +133,7 @@ improvement suggestions.
 
 > _Set up your organization's training environment and monitor trainee
 > progress._
+
 <Steps>
 
 <Step title="1. Register your organization">
@@ -239,6 +241,7 @@ All data is encrypted & access-controlled. See
 ## 💻 For Developers
 
 > _Set up the full platform locally for development and contribution._
+
 <Info>
 
 **Prerequisites:** Node.js 19+ • Python 3.11+ • pnpm • MongoDB • Redis • Docker
@@ -278,7 +281,7 @@ cd ..
 
 <Step title="3. Configure environment">
 
-```bash text
+````bash text
 
 cp .env.example .env
 
@@ -301,7 +304,7 @@ FINE_TUNED_THERAPEUTIC_MODEL=meta-llama-3-8b-instruct
 ## Auth
 AUTH_SECRET=your_auth_secret_here
 
-```
+````
 
 <Warning>
 
@@ -389,7 +392,7 @@ pixelated-empathy/
 
 <Accordion title="Docker setup" icon="docker">
 
-```bash
+````bash
 
 ## Full containerized environment
 docker compose up --build
@@ -406,7 +409,7 @@ Available at **<http://localhost:4321>**
 docker compose exec app pnpm test
 docker compose exec ai-services python -m pytest
 
-```
+````
 
 </Accordion>
 

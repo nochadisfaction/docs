@@ -83,7 +83,7 @@ automated compliance gate that validates every response before delivery.
     - Jumping to advice before acknowledging feelings
     - Minimizing or categorizing emotions prematurely
 
-```python text
+````python text
     # EARS compliance gate — empathy detection heuristics
     EMPATHY_INDICATORS = [
         "I hear you", "That sounds", "It makes sense that",
@@ -171,7 +171,7 @@ class EarsConfig:
     minimum_crisis_samples: int = 50             # Min crisis samples for validation
 
 
-```
+````
 
 <Warning>
   **Non-compliant outputs are blocked.** Any dataset or pipeline output that
@@ -309,7 +309,9 @@ distinguish it from conventional crisis handling.
     1. Only after connection is established does it collaboratively explore safety
 
     **Why this matters:** Research consistently shows that people in crisis who feel heard and connected are more
-receptive to safety planning than those who receive immediate directive responses.
+
+receptive to safety planning than those who receive immediate directive
+responses.
 
   </Accordion>
 
@@ -343,9 +345,9 @@ defaulting to institutional referrals.
 
     <Warning>
       **No institutional referral language unless the user initiates.** The system does not push crisis hotlines,
-emergency services, or professional referrals unless the user asks for them or the situation meets the threshold for
-immediate danger.
-    </Warning>
+
+emergency services, or professional referrals unless the user asks for them or
+the situation meets the threshold for immediate danger. </Warning>
 
   </Accordion>
 </AccordionGroup>
@@ -360,6 +362,7 @@ escalation:
 ## Confidence < 50%
 
     Low-level signals detected. Enhanced monitoring activated. Empathetic response adjusted to be more attuned. No
+
 escalation.
 
   </Card>
@@ -367,6 +370,7 @@ escalation.
 ## Confidence 50–70%
 
     Meaningful crisis signals present. Response shifts to connection-focused mode. Safety gently explored within
+
 conversation.
 
   </Card>
@@ -380,6 +384,7 @@ conversation.
 ## Confidence ≥ 90%
 
     Immediate danger indicators (plan, means, timeline). Full crisis protocol activated. Incident response team engaged.
+
 Auto-escalation if not handled within configured timeframe.
 
   </Card>
@@ -387,7 +392,7 @@ Auto-escalation if not handled within configured timeframe.
 
 ### Crisis Response Template
 
-``` text
+```text
 
 
 1. ACKNOWLEDGE — "I hear that you're in a really painful place right now."
@@ -427,9 +432,9 @@ individual identity.
 
     <Tip>
       Cultural profiling is always probabilistic and tentative. The system **never** makes definitive assumptions about
-a person's cultural identity based on detected signals. Confidence scores below 0.6 result in a culturally neutral
-default approach.
-    </Tip>
+
+a person's cultural identity based on detected signals. Confidence scores below
+0.6 result in a culturally neutral default approach. </Tip>
 
   </Tab>
   <Tab title="Response Adaptation">
@@ -512,16 +517,16 @@ languages and cultures:
 The following AI behaviors are explicitly prohibited and enforced through
 automated guardrails:
 
-| Prohibited Behavior                        | Enforcement Mechanism                                                       |
-| ------------------------------------------ | --------------------------------------------------------------------------- |
-| Toxic positivity or emotional minimization | EARS compliance gate + response filtering                                   |
-| Diagnosis or diagnostic language           | Output filter + training data curation                                      |
-| Unsolicited institutional referrals        | Crisis protocol rules — user-initiated only                                 |
-| Prescriptive advice ("You should...")      | EARS Support layer validation                                               |
+| Prohibited Behavior                        | Enforcement Mechanism                                                            |
+| ------------------------------------------ | -------------------------------------------------------------------------------- |
+| Toxic positivity or emotional minimization | EARS compliance gate + response filtering                                        |
+| Diagnosis or diagnostic language           | Output filter + training data curation                                           |
+| Unsolicited institutional referrals        | Crisis protocol rules — user-initiated only                                      |
+| Prescriptive advice ("You should...")      | EARS Support layer validation                                                    |
 | Storing identifiable PHI in AI memory      | GeminiHindsightManager PII filter (see [Data Privacy](/compliance/data-privacy)) |
-| Cultural stereotyping                      | Real-time bias detection + cultural competency system                       |
-| Claiming to be human                       | Transparency guardrail — AI identity disclosed                              |
-| Replacing professional therapy             | Scope guardrail — training platform positioning enforced                    |
+| Cultural stereotyping                      | Real-time bias detection + cultural competency system                            |
+| Claiming to be human                       | Transparency guardrail — AI identity disclosed                                   |
+| Replacing professional therapy             | Scope guardrail — training platform positioning enforced                         |
 
 ### Accountability
 

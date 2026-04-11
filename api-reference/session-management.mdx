@@ -56,7 +56,6 @@ curl -X POST <https://api.pixelatedempathy.com/v1/sessions> \
 ### Response
 
 ```json
-
 {
   "status": "success",
   "data": {
@@ -83,7 +82,6 @@ curl -X POST <https://api.pixelatedempathy.com/v1/sessions> \
     "timestamp": "2025-01-15T10:00:00Z"
   }
 }
-
 ```
 
 <Tip>
@@ -124,7 +122,6 @@ curl "<https://api.pixelatedempathy.com/v1/sessions?status=completed&limit=10&so
 ### Response (2)
 
 ```json
-
 {
   "status": "success",
   "data": [
@@ -161,7 +158,6 @@ curl "<https://api.pixelatedempathy.com/v1/sessions?status=completed&limit=10&so
     "total_count": 47
   }
 }
-
 ```
 
 ## Get session details
@@ -298,7 +294,6 @@ curl -X PATCH <https://api.pixelatedempathy.com/v1/sessions/sess_7a8b9c0d1e2f> \
 ### Response (4)
 
 ```json text
-
 {
   "status": "success",
   "data": {
@@ -309,7 +304,6 @@ curl -X PATCH <https://api.pixelatedempathy.com/v1/sessions/sess_7a8b9c0d1e2f> \
     "updated_at": "2025-01-15T11:00:00Z"
   }
 }
-
 ```
 
 ## Delete a session
@@ -335,7 +329,6 @@ curl -X DELETE <https://api.pixelatedempathy.com/v1/sessions/sess_7a8b9c0d1e2f> 
 ### Response (5)
 
 ```json text
-
 {
   "status": "success",
   "data": {
@@ -344,7 +337,6 @@ curl -X DELETE <https://api.pixelatedempathy.com/v1/sessions/sess_7a8b9c0d1e2f> 
     "deleted_at": "2025-01-15T12:00:00Z"
   }
 }
-
 ```
 
 ## Scenario selection
@@ -412,7 +404,6 @@ communication between the trainee and the AI client.
 ### Connecting
 
 ```javascript
-
 const ws = new WebSocket(
   'wss://rt.pixelatedempathy.com/v1/sessions/sess_7a8b9c0d1e2f/connect',
   {
@@ -445,7 +436,6 @@ ws.onerror = (error) => {
 ws.onclose = (event) => {
   console.log('Session disconnected:', event.code, event.reason)
 }
-
 ```
 
 ### Sending messages
@@ -453,7 +443,6 @@ ws.onclose = (event) => {
 Send trainee responses to the AI client:
 
 ```javascript text
-
 // Send a text message
 ws.send(
   JSON.stringify({
@@ -471,7 +460,6 @@ ws.send(
     timestamp: new Date().toISOString(),
   }),
 )
-
 ```
 
 ### Receiving messages
@@ -500,7 +488,7 @@ ws.send(
   <Accordion title="feedback">
     Real-time feedback on the trainee's most recent response (practice mode only):
 
-```json text
+````json text
 
     {
       "type": "feedback",
@@ -624,7 +612,7 @@ curl <https://api.pixelatedempathy.com/v1/sessions/sess_7a8b9c0d1e2f/recording> 
   }
 }
 
-```
+````
 
 <Info>
   Recordings are stored encrypted at rest and served over signed URLs. Each URL

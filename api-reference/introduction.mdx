@@ -15,7 +15,7 @@ systems.
 
 All API requests are made to the following base URL:
 
-``` text
+```text
 <https://api.pixelatedempathy.com/v1>
 
 ```
@@ -40,7 +40,7 @@ additive, backwards-compatible changes.
 
 Version is included in the URL path:
 
-``` text
+```text
 
 <https://api.pixelatedempathy.com/v1/sessions>
 <https://api.pixelatedempathy.com/v1/bias-analysis/analyze>
@@ -79,7 +79,7 @@ Rate limits vary by authentication role and endpoint category:
 
 Rate limit status is returned in response headers:
 
-``` text
+```text
 
 X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 997
@@ -99,7 +99,6 @@ All responses are returned in JSON format with a consistent envelope structure.
 ### Successful response
 
 ```json text
-
 {
   "status": "success",
   "data": {
@@ -116,13 +115,11 @@ All responses are returned in JSON format with a consistent envelope structure.
     "timestamp": "2025-01-15T10:30:00Z"
   }
 }
-
 ```
 
 ### Error response
 
 ```json text
-
 {
   "status": "error",
   "error": {
@@ -141,7 +138,6 @@ All responses are returned in JSON format with a consistent envelope structure.
     "timestamp": "2025-01-15T10:30:01Z"
   }
 }
-
 ```
 
 ## Error codes
@@ -181,7 +177,7 @@ consistent performance across large datasets.
 
 ### Paginated response
 
-```json
+````json
 
 {
   "status": "success",
@@ -211,7 +207,7 @@ To fetch the next page:
 curl "<https://api.pixelatedempathy.com/v1/sessions?limit=20&cursor=eyJpZCI6InNlc3NfMDAyIn0="> \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
-```
+````
 
 ## OpenAPI specification
 
@@ -244,7 +240,7 @@ Official client libraries are available for popular languages:
 <Tabs>
   <Tab title="Python">
 
-```bash text
+````bash text
 
     pip install pixelated-empathy
 
@@ -368,3 +364,4 @@ All API endpoints are HIPAA-compliant by default. Protected health information
     Detect and respond to crisis signals in real time.
   </Card>
 </CardGroup>
+````

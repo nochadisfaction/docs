@@ -28,23 +28,23 @@ Before you start, make sure you have:
   git clone <https://github.com/pixelated-empathy/pixelated.git>
   cd pixelated
 
-  ```
+```
 
   </Step>
 
   <Step title="Install Dependencies">
 
-  ```bash
+```bash
 
-  # Node dependencies
-  pnpm install
+# Node dependencies
+pnpm install
 
 ## Python dependencies
 
 uv install
 
 
-````
+```
 
 </Step>
 
@@ -54,7 +54,7 @@ uv install
 
 pnpm dev
 
-````
+```
 
 That gets you the frontend running at `<http://localhost:4321`.>
 
@@ -148,7 +148,7 @@ pixelated/
 
 Copy the example env file and fill in your values:
 
-```bash text
+````bash text
 
 cp .env.example .env.local
 
@@ -164,7 +164,7 @@ NODE_ENV=development
 PORT=4321
 HINDSIGHT_API_KEY=your-hindsight-api-key # Legacy fallback: HINDSIGHT_API_KEY
 
-```
+````
 
 <Warning>**Never commit `.env.local`.** It's already in `.gitignore`.</Warning>
 
@@ -172,7 +172,7 @@ HINDSIGHT_API_KEY=your-hindsight-api-key # Legacy fallback: HINDSIGHT_API_KEY
 
 We use path aliases to keep imports clean. Instead of:
 
-```typescript
+````typescript
 
 import { EmotionAnalyzer } from '../../../lib/ai/emotion-analyzer'
 
@@ -186,7 +186,7 @@ You write:
 
 import { EmotionAnalyzer } from '@/lib/ai/emotion-analyzer'
 
-```
+````
 
 Available aliases:
 

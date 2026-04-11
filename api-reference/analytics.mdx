@@ -37,7 +37,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/dashboard?period=30d"> \
 ### Response
 
 ```json
-
 {
   "status": "success",
   "data": {
@@ -86,7 +85,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/dashboard?period=30d"> \
     "timestamp": "2025-01-15T10:30:00Z"
   }
 }
-
 ```
 
 ## Performance metrics over time
@@ -115,7 +113,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/performance?period=90d&inte
 ### Response (2)
 
 ```json
-
 {
   "status": "success",
   "data": {
@@ -148,7 +145,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/performance?period=90d&inte
     }
   }
 }
-
 ```
 
 ## Competency scores
@@ -167,7 +163,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/competencies?period=30d"> \
 ### Response (3)
 
 ```json
-
 {
   "status": "success",
   "data": {
@@ -220,7 +215,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/competencies?period=30d"> \
     ]
   }
 }
-
 ```
 
 <Tip>
@@ -246,7 +240,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/bias-trends?period=90d&inte
 ### Response (4)
 
 ```json
-
 {
   "status": "success",
   "data": {
@@ -343,7 +336,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/bias-trends?period=90d&inte
     }
   }
 }
-
 ```
 
 ## Session frequency
@@ -362,7 +354,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/frequency?period=30d"> \
 ### Response (5)
 
 ```json
-
 {
   "status": "success",
   "data": {
@@ -391,7 +382,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/frequency?period=30d"> \
     }
   }
 }
-
 ```
 
 ## Comparative benchmarking
@@ -423,7 +413,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/benchmarks?user_id=usr_k1l2
 ### Response (6)
 
 ```json
-
 {
   "status": "success",
   "data": {
@@ -463,7 +452,6 @@ curl "<https://api.pixelatedempathy.com/v1/analytics/benchmarks?user_id=usr_k1l2
     }
   }
 }
-
 ```
 
 ## Export endpoints
@@ -510,7 +498,7 @@ curl -X POST <https://api.pixelatedempathy.com/v1/analytics/export> \
     assigns random participant IDs. Includes session-level and response-level
     metrics.
 
-```json text
+````json text
 
     {
       "export_type": "research",
@@ -576,11 +564,11 @@ status polling:
   }
 }
 
-```
+````
 
 ### Check export status
 
-```bash
+````bash
 
 curl <https://api.pixelatedempathy.com/v1/analytics/export/exp_x1y2z3a4> \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
@@ -603,7 +591,7 @@ curl <https://api.pixelatedempathy.com/v1/analytics/export/exp_x1y2z3a4> \
   }
 }
 
-```
+````
 
 <Info>
   Export download links are signed and expire after 7 days. Generate a new
@@ -627,16 +615,16 @@ curl <https://api.pixelatedempathy.com/v1/analytics/export/exp_x1y2z3a4> \
 
 <CardGroup cols={2}>
   <Card
-    title="Session Management API"
-    icon="comments"
-    href="/api-reference/session-management"
+    title='Session Management API'
+    icon='comments'
+    href='/api-reference/session-management'
   >
     Manage the training sessions that generate analytics data.
   </Card>
   <Card
-    title="Crisis Detection API"
-    icon="triangle-exclamation"
-    href="/api-reference/crisis-detection"
+    title='Crisis Detection API'
+    icon='triangle-exclamation'
+    href='/api-reference/crisis-detection'
   >
     Monitor for crisis signals and integrate with safety protocols.
   </Card>

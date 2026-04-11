@@ -17,6 +17,7 @@ orchestration, scaling, and networking layers differ.
 ## Docker Compose
 
     Local development with hot reloading, GPU passthrough for AI services, and Caddy for automatic HTTPS. Optimized for
+
 developer productivity.
 
   </Card>
@@ -24,6 +25,7 @@ developer productivity.
 ## Docker Compose (Production)
 
     Production-like environment with multiple replicas, Nginx reverse proxy, monitoring stack, and resource limits. Used
+
 for integration testing and QA.
 
   </Card>
@@ -31,6 +33,7 @@ for integration testing and QA.
 ## Kubernetes + Helm
 
     Auto-scaling, multi-region deployment with Helm charts, Ingress controllers, cert-manager, and full observability.
+
 Designed for enterprise workloads.
 
   </Card>
@@ -51,14 +54,13 @@ services:
   mcp-server: # Memory server (FastAPI, port 5003)
   ollama: # Local LLM inference (GPU-accelerated)
   ai-service: # AI pipeline services (GPU-accelerated)
-
 ```
 
 <Tabs>
   <Tab title="Application Service">
     The main Astro application runs in a production-like container with SSR enabled:
 
-```yaml text
+````yaml text
 
     app:
       build:
@@ -213,7 +215,7 @@ docker compose logs -f ai-service
 ## Tear down
 docker compose down
 
-```
+````
 
 <Warning>
   GPU-accelerated services (`ai-service` and `ollama`) require the **NVIDIA
@@ -230,7 +232,6 @@ multi-replica deployment, and resource constraints.
 ### Service architecture (2)
 
 ```yaml
-
 ## docker/docker-compose.prod.yml — Production Services
 services:
   postgres: # PostgreSQL 15 (primary database)
@@ -239,7 +240,6 @@ services:
   nginx: # Nginx reverse proxy with SSL
   prometheus: # Metrics collection
   grafana: # Monitoring dashboards
-
 ```
 
 <Tabs>
@@ -369,7 +369,7 @@ Helm charts that deploy to any Kubernetes cluster.
 
 ### Helm chart structure
 
-``` text
+```text
 
 ai/infrastructure/helm/pixelated-empathy/
 ├── Chart.yaml              # Chart metadata and dependencies
@@ -405,7 +405,7 @@ The Helm chart bundles all infrastructure dependencies as sub-charts:
 <Tabs>
   <Tab title="Scaling">
 
-```yaml text
+````yaml text
 
     # Replica and autoscaling configuration
     replicaCount: 3                  # Minimum replicas
@@ -554,12 +554,11 @@ helm upgrade --install pixelated-empathy \
   --set app.secrets.redisUrl=$REDIS_URL \
   --set app.secrets.jwtSecret=$JWT_SECRET
 
-```
+````
 
 ### Backup configuration
 
 ```yaml
-
 ## Automated daily backups to S3
 backup:
   enabled: true
@@ -569,7 +568,6 @@ backup:
     type: 's3'
     bucket: 'pixelated-empathy-backups'
     region: 'us-west-2'
-
 ```
 
 ## Cloudflare Workers (Edge)
@@ -596,24 +594,17 @@ The CI/CD pipeline runs on **GitLab CI/CD** with eight stages that enforce code
 quality, security, and deployment safety.
 
 ```yaml
-
-┌───────────┐   ┌────────┐   ┌────────────┐   ┌───────────┐   ┌──────────┐
-│ Validate  │──▶│  Test  │──▶│ Terraform  │──▶│   Build   │──▶│ Security │
-│           │   │        │   │            │   │           │   │          │
-│ • deps    │   │ • unit │   │ • validate │   │ • docker  │   │ • trivy  │
-│ • lint    │   │ • integ│   │ • plan     │   │ • push    │   │ • scan   │
-│ • types   │   │ • e2b  │   │            │   │ • acr     │   │          │
-└───────────┘   └────────┘   └────────────┘   └───────────┘   └──────────┘
-                                                                    │
-                                                                    ▼
-                                              ┌──────────┐   ┌─────────────┐
-                                              │  Health   │◀──│   Deploy    │
-                                              │  Check    │   │             │
-                                              │           │   │ • staging   │
-                                              │ • pods    │   │ • prod      │
-                                              │ • curl    │   │ • k8s       │
-                                              └──────────┘   └─────────────┘
-
+┌───────────┐   ┌────────┐   ┌────────────┐   ┌───────────┐   ┌──────────┐ │
+Validate  │──▶│  Test  │──▶│ Terraform  │──▶│   Build   │──▶│ Security │
+│           │   │        │   │            │   │           │   │          │ │ •
+deps    │   │ • unit │   │ • validate │   │ • docker  │   │ • trivy  │ │ •
+lint    │   │ • integ│   │ • plan     │   │ • push    │   │ • scan   │ │ •
+types   │   │ • e2b  │   │            │   │ • acr     │   │          │
+└───────────┘   └────────┘   └────────────┘   └───────────┘   └──────────┘ │ ▼
+┌──────────┐   ┌─────────────┐ │  Health   │◀──│   Deploy    │
+│  Check    │   │             │ │           │   │ • staging   │ │ •
+pods    │   │ • prod      │ │ • curl    │   │ • k8s       │
+└──────────┘   └─────────────┘
 ```
 
 ### Pipeline stages
@@ -688,8 +679,9 @@ quality, security, and deployment safety.
 
     <Note>
       GKE deployment is currently **paused** pending billing configuration. The pipeline stages are defined but disabled
-— re-enable by uncommenting the `deploy:staging` and `health-check` jobs in `.gitlab-ci.yml`.
-    </Note>
+
+— re-enable by uncommenting the `deploy:staging` and `health-check` jobs in
+`.gitlab-ci.yml`. </Note>
 
   </Accordion>
 </AccordionGroup>
@@ -703,6 +695,7 @@ The monitoring stack provides full observability across all deployment tiers.
 ## Metrics Collection
 
     Scrapes metrics from all services at configurable intervals. Stores time-series data with configurable retention.
+
 Powers alerting rules and Grafana dashboards.
 
     - Service health metrics (up/down, latency, error rates)
@@ -724,6 +717,7 @@ Powers alerting rules and Grafana dashboards.
 ## Error Tracking
 
     Captures unhandled exceptions and errors with full stack traces, breadcrumbs, and context. Integrated into both
+
 frontend (React) and backend (Node.js, Python) services.
 
     - Automatic release tracking tied to Git commits
@@ -749,7 +743,6 @@ Every service exposes a `/health` endpoint that returns service status and
 dependency connectivity:
 
 ```json text
-
 {
   "status": "healthy",
   "version": "1.0.0",
@@ -763,7 +756,6 @@ dependency connectivity:
   },
   "uptime_seconds": 86400
 }
-
 ```
 
 ## Environment configuration
@@ -771,7 +763,7 @@ dependency connectivity:
 <Tabs>
   <Tab title="Development (.env.local)">
 
-```bash text
+````bash text
 
     # Core
     NODE_ENV=development
@@ -887,7 +879,7 @@ terraform/
     ├── staging.tfvars         # Staging variable values
     └── production.tfvars      # Production variable values
 
-```
+````
 
 <Info>
   Terraform state is stored remotely using GitLab's managed Terraform state
@@ -909,9 +901,9 @@ terraform/
   <Accordion title='Deployment' icon='rocket'>
     - [ ] Deploy to staging first and verify health checks - [ ] Run integration
     test suite against staging - [ ] Verify memory system connectivity (MCP
-    Server → Hindsight → Gemini) - [ ] Verify WebSocket connectivity for training
-    sessions - [ ] Check Grafana dashboards for anomalies - [ ] Deploy to
-    production with rolling update strategy
+    Server → Hindsight → Gemini) - [ ] Verify WebSocket connectivity for
+    training sessions - [ ] Check Grafana dashboards for anomalies - [ ] Deploy
+    to production with rolling update strategy
   </Accordion>
   <Accordion title='Post-deployment' icon='magnifying-glass'>
     - [ ] Verify `/health` endpoint returns healthy status - [ ] Confirm all

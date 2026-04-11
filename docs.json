@@ -15,12 +15,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": [
-              "index",
-              "quickstart",
-              "concepts",
-              "manifesto"
-            ]
+            "pages": ["index", "quickstart", "concepts", "manifesto"]
           },
           {
             "group": "The Platform",
@@ -89,9 +84,7 @@
           },
           {
             "group": "Training",
-            "pages": [
-              "guides/training/PIXEL-MODEL-TRAINING-HUB"
-            ]
+            "pages": ["guides/training/PIXEL-MODEL-TRAINING-HUB"]
           },
           {
             "group": "User Guides",
@@ -238,16 +231,11 @@
           },
           {
             "group": "Development",
-            "pages": [
-              "development/README"
-            ]
+            "pages": ["development/README"]
           },
           {
             "group": "Features",
-            "pages": [
-              "features/README",
-              "features/eval-gating"
-            ]
+            "pages": ["features/README", "features/eval-gating"]
           },
           {
             "group": "Design System",
@@ -302,9 +290,7 @@
           },
           {
             "group": "Governance",
-            "pages": [
-              "governance/provenance_storage_plan"
-            ]
+            "pages": ["governance/provenance_storage_plan"]
           },
           {
             "group": "Migration",
@@ -316,10 +302,7 @@
           },
           {
             "group": "Security",
-            "pages": [
-              "security/safety",
-              "security/credential-files-security"
-            ]
+            "pages": ["security/safety", "security/credential-files-security"]
           },
           {
             "group": "Audits",

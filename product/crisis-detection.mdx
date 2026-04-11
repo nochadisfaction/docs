@@ -383,8 +383,6 @@ prioritizes connection at every step.
 The Crisis Protocol system handles the operational side of crisis events:
 
 ```typescript
-
-
 // Crisis protocol activation flow
 interface CrisisEvent {
   category: CrisisCategory // e.g., SUICIDE_IDEATION
@@ -400,8 +398,6 @@ interface CrisisEvent {
 // LOW/MEDIUM → Session monitor only
 // HIGH → Supervisor notification + Slack alert
 // IMMEDIATE → All channels + auto-escalation timer
-
-
 ```
 
 ### Session flagging

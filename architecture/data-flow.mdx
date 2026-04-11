@@ -24,7 +24,7 @@ The most critical data flow in the platform is the **training session
 lifecycle** — the path data takes from the moment a trainee types a message to
 when they receive AI-generated feedback.
 
-```text
+````text
 ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
 │  Trainee │    │ Frontend │    │   API    │    │    AI    │    │  Memory  │
 │  Input   │───▶│  (Astro) │───▶│ Gateway  │───▶│ Services │───▶│  Server  │
@@ -563,3 +563,4 @@ ensure graceful degradation.
   powers long-term memory with PII compliance, or explore the [Deployment
   Architecture](/architecture/deployment) for infrastructure details.
 </Info>
+````

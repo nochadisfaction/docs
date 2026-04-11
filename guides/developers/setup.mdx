@@ -24,7 +24,7 @@ Ensure the following tools are installed before proceeding:
   <Card title="Node.js 24+" icon="node-js">
     Required for the frontend (Astro/React) and Node.js backend services. Download from [nodejs.org](https://nodejs.org).
 
-```bash text
+````bash text
     node --version
     # v24.x.x or higher
 
@@ -274,7 +274,7 @@ Start the Astro development server with hot module reloading:
 
 pnpm dev
 
-```
+````
 
 The application will be available at **<http://localhost:5173>** with automatic
 hot reloading as you edit files.
@@ -325,7 +325,7 @@ Never commit this file.
 <Tabs>
   <Tab title="Core">
 
-```bash text
+````bash text
 
     # Application
     NODE_ENV=development
@@ -444,7 +444,7 @@ import { Button } from '@components/ui/Button'
 // ❌ Wrong — never use relative paths for cross-directory imports
 import { EmotionAnalyzer } from '../../../lib/ai/emotion-analyzer'
 
-```
+````
 
 ## Docker Compose Services
 
@@ -502,6 +502,7 @@ The `docker/docker-compose.dev.yml` file defines the local infrastructure stack:
 
 
     This includes the application, all backend services, and infrastructure — useful for integration testing and
+
 pre-deployment verification.
 
   </Accordion>
@@ -548,6 +549,7 @@ Run these checks to confirm everything is working:
 
 
     All tests should pass. If you see failures related to missing environment variables, ensure your `.env.local` is
+
 configured correctly.
 
   </Step>
@@ -621,7 +623,7 @@ issues:
   <Accordion title="Python environment issues" icon="python">
     If uv encounters issues, try resetting the environment:
 
-```bash text
+````bash text
 
     rm -rf .venv
     uv install
@@ -708,3 +710,4 @@ issues:
     detection.
   </Card>
 </CardGroup>
+````
