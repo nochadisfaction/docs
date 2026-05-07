@@ -2,21 +2,30 @@ import { Meta } from '@site/src/components/Meta'
 
 # Offline-First Synchronization
 
-Pixelated Empathy implements an offline-first synchronization system to ensure reliable operation even when network connectivity is intermittent or unavailable. This system uses IndexedDB for persistent storage of requests and data, allowing the application to queue operations when offline and synchronize them when connectivity is restored.
+Pixelated Empathy implements an offline-first synchronization system to ensure
+reliable operation even when network connectivity is intermittent or
+unavailable. This system uses IndexedDB for persistent storage of requests and
+data, allowing the application to queue operations when offline and synchronize
+them when connectivity is restored.
 
 ## Overview
 
 The offline-first system consists of three main components:
 
-1. **IndexedDB Storage Wrapper** - A low-level async key-value storage interface built on top of IndexedDB
-2. **IndexedDB-Backed Request Queue** - A persistent queue for storing network requests that fail due to offline conditions
-3. **Sync Manager** - Handles synchronization of queued requests with exponential backoff retry logic
+1. **IndexedDB Storage Wrapper** - A low-level async key-value storage interface
+   built on top of IndexedDB
+2. **IndexedDB-Backed Request Queue** - A persistent queue for storing network
+   requests that fail due to offline conditions
+3. **Sync Manager** - Handles synchronization of queued requests with
+   exponential backoff retry logic
 
 ## Components
 
 ### IndexedDB Storage Wrapper
 
-Located at `src/utils/storage/indexedDBStorage.ts`, this wrapper provides asynchronous get/set/remove operations on IndexedDB object stores. It handles database initialization, versioning, and basic CRUD operations.
+Located at `src/utils/storage/indexedDBStorage.ts`, this wrapper provides
+asynchronous get/set/remove operations on IndexedDB object stores. It handles
+database initialization, versioning, and basic CRUD operations.
 
 Key features:
 
@@ -27,7 +36,9 @@ Key features:
 
 ### IndexedDB-Backed Request Queue
 
-Located at `src/utils/offline/indexedDBRequestQueue.ts`, this queue stores network requests that fail due to offline conditions and processes them when connectivity is restored.
+Located at `src/utils/offline/indexedDBRequestQueue.ts`, this queue stores
+network requests that fail due to offline conditions and processes them when
+connectivity is restored.
 
 Key features:
 
@@ -40,7 +51,9 @@ Key features:
 
 ### Sync Manager
 
-Located at `src/utils/offline/syncManager.ts`, this manager coordinates the synchronization process with exponential backoff to prevent overwhelming the server when connectivity is restored.
+Located at `src/utils/offline/syncManager.ts`, this manager coordinates the
+synchronization process with exponential backoff to prevent overwhelming the
+server when connectivity is restored.
 
 Key features:
 
@@ -49,15 +62,20 @@ Key features:
 - Exponential backoff algorithm with configurable base and maximum delays
 - Sync success/failure callbacks for UI updates
 - Manual sync triggering capability
-- Status monitoring (online state, syncing state, backoff multiplier, pending requests)
+- Status monitoring (online state, syncing state, backoff multiplier, pending
+  requests)
 
 ## Integration with Existing Systems
 
 The offline-first system integrates with the existing offline management system:
 
-1. The `OfflineManager` class (`src/utils/offline/offlineManager.ts`) has been updated to use the IndexedDB-backed request queue instead of the previous localStorage-based queue
-2. The `createOfflineFetch` function now queues failed requests to the IndexedDB queue when offline
-3. The sync manager is instantiated as a singleton and started automatically by the offline manager
+1. The `OfflineManager` class (`src/utils/offline/offlineManager.ts`) has been
+   updated to use the IndexedDB-backed request queue instead of the previous
+   localStorage-based queue
+2. The `createOfflineFetch` function now queues failed requests to the IndexedDB
+   queue when offline
+3. The sync manager is instantiated as a singleton and started automatically by
+   the offline manager
 
 ## Configuration
 
@@ -165,14 +183,19 @@ pnpm vitest run src/utils/offline/__tests__/
 2. **Data Integrity**: No data loss due to temporary network issues
 3. **User Experience**: Seamless transition between online and offline states
 4. **Performance**: Non-blocking IndexedDB operations prevent UI freezing
-5. **Scalability**: Exponential backoff prevents server overload during recovery periods
+5. **Scalability**: Exponential backoff prevents server overload during recovery
+   periods
 
 ## Limitations
 
 1. **Storage Limits**: IndexedDB storage is subject to browser storage quotas
-2. **Data Types**: Only structured cloneable data can be stored (no functions, DOM nodes, etc.)
-3. **Request Bodies**: Large request bodies may impact performance when stored in IndexedDB
-4. **Sync Conflicts**: The system does not automatically resolve conflicts if the same data is modified both locally and on the server during offline periods
+2. **Data Types**: Only structured cloneable data can be stored (no functions,
+   DOM nodes, etc.)
+3. **Request Bodies**: Large request bodies may impact performance when stored
+   in IndexedDB
+4. **Sync Conflicts**: The system does not automatically resolve conflicts if
+   the same data is modified both locally and on the server during offline
+   periods
 
 ## Future Improvements
 

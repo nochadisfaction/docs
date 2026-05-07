@@ -33,9 +33,7 @@
       "get": {
         "summary": "API Health Check",
         "description": "Check the current status and health of the API services.",
-        "tags": [
-          "System"
-        ],
+        "tags": ["System"],
         "responses": {
           "200": {
             "description": "System is healthy",
@@ -58,9 +56,7 @@
         "summary": "Search Content",
         "description": "Search across blog posts, documentation, and research articles.",
         "operationId": "searchContent",
-        "tags": [
-          "Content"
-        ],
+        "tags": ["Content"],
         "parameters": [
           {
             "name": "q",
@@ -111,9 +107,7 @@
         "summary": "Get User Profile",
         "description": "Retrieve the authenticated user's profile information.",
         "operationId": "getProfile",
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "responses": {
           "200": {
             "description": "User profile retrieved successfully",
@@ -142,9 +136,7 @@
         "summary": "Update User Profile",
         "description": "Update the authenticated user's profile metadata.",
         "operationId": "updateProfile",
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "requestBody": {
           "required": true,
           "content": {
@@ -185,9 +177,7 @@
         "summary": "List Platform Users",
         "description": "Retrieve a paginated list of users (Admin only).",
         "operationId": "listUsers",
-        "tags": [
-          "Admin"
-        ],
+        "tags": ["Admin"],
         "parameters": [
           {
             "name": "page",
@@ -274,11 +264,7 @@
         "properties": {
           "status": {
             "type": "string",
-            "enum": [
-              "healthy",
-              "degraded",
-              "unhealthy"
-            ]
+            "enum": ["healthy", "degraded", "unhealthy"]
           },
           "timestamp": {
             "type": "string",

@@ -1,4 +1,5 @@
-epics/
-audits/
-maestro/
+# Sorted alphabetically
 AGENTS.md
+audits/
+epics/
+maestro/
