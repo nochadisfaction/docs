@@ -637,14 +637,13 @@ pods    │   │ • prod      │ │ • curl    │   │ • k8s       │
 
   </Accordion>
   <Accordion title="Stage 4: Build" icon="hammer">
-    Docker images are built and pushed to registries:
+    Docker images are built and pushed to the registry:
 
     | Job | Target Registry | Trigger |
     |---|---|---|
     | `build` | GitLab Container Registry | Every MR + main |
-    | `build:acr` | Azure Container Registry | Main branch only |
 
-    Both jobs use layer caching (`--cache-from`) to minimize build time:
+    The job uses layer caching (`--cache-from`) to minimize build time:
 
 
     ```bash
