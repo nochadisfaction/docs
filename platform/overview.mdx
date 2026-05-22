@@ -72,23 +72,23 @@ Behind every simulated conversation is our **Emotional Intelligence Engine** —
 Python-based AI system that does several things simultaneously:
 
 <CardGroup cols={2}>
-  <Card title='Understands You' icon='ear-listen'>
+  <Card title="Understands You" icon="ear-listen">
     It analyzes what you say — not just the words, but the tone, the timing, the
     emotional register. Are you reflecting before redirecting? Are you creating
     safety? Are you rushing to fix?
   </Card>
-  <Card title='Simulates the Client' icon='masks-theater'>
+  <Card title="Simulates the Client" icon="masks-theater">
     It generates realistic client responses based on emotional profiles — a
     combination of Plutchik's core emotions, Big Five personality traits, and
     scenario-specific context. The responses aren't scripted. They're
     dynamically generated based on the conversational flow.
   </Card>
-  <Card title='Evaluates Your Response' icon='chart-line'>
+  <Card title="Evaluates Your Response" icon="chart-line">
     After each exchange, the engine assesses the quality of your intervention —
     did you validate before advising? Did you use precise emotional language?
     Did you maintain appropriate pacing?
   </Card>
-  <Card title='Watches for Crisis Signals' icon='shield-halved'>
+  <Card title="Watches for Crisis Signals" icon="shield-halved">
     Across every conversation, the engine monitors for indicators of severe
     distress or potential harm. This isn't optional functionality — it's woven
     into the core of the system.
@@ -161,22 +161,22 @@ We made a deliberate choice to build a multi-service architecture rather than a
 monolith. Here's why:
 
 <CardGroup cols={2}>
-  <Card title='Separation of Concerns' icon='puzzle-piece'>
+  <Card title="Separation of Concerns" icon="puzzle-piece">
     The AI engine is complex enough to warrant its own service. The frontend
     needs to be fast. The WebSocket server needs to be always-on. Separating
     these lets each piece do its job well.
   </Card>
-  <Card title='Safety Isolation' icon='shield-halved'>
+  <Card title="Safety Isolation" icon="shield-halved">
     Crisis detection runs as an always-on monitor. If the main AI engine
     encounters an issue, crisis monitoring continues uninterrupted. Safety
     doesn't depend on everything working perfectly.
   </Card>
-  <Card title='Scalability' icon='arrow-up-right-dots'>
+  <Card title="Scalability" icon="arrow-up-right-dots">
     As our user base grows, different parts of the system will need to scale at
     different rates. Separate services let us scale what needs scaling without
     rebuilding everything.
   </Card>
-  <Card title='Developer Experience' icon='code'>
+  <Card title="Developer Experience" icon="code">
     Different parts of the system use different languages (TypeScript for the
     frontend, Python for the AI). Separating them means developers work in the
     environment that's best for the task.
@@ -186,17 +186,17 @@ monolith. Here's why:
 ## Related Reading
 
 <CardGroup cols={3}>
-  <Card title='The Empathy Gym™' icon='dumbbell' href='/platform/empathy-gym'>
+  <Card title="The Empathy Gym™" icon="dumbbell" href="/platform/empathy-gym">
     The training simulator in detail.
   </Card>
   <Card
-    title='EI Engine'
-    icon='brain'
-    href='/platform/emotional-intelligence-engine'
+    title="EI Engine"
+    icon="brain"
+    href="/platform/emotional-intelligence-engine"
   >
     How we model and generate emotions.
   </Card>
-  <Card title='Privacy & Trust' icon='lock' href='/platform/privacy-and-trust'>
+  <Card title="Privacy & Trust" icon="lock" href="/platform/privacy-and-trust">
     How we protect your data.
   </Card>
 </CardGroup>

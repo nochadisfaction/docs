@@ -4,11 +4,11 @@ Canonical memory block schema for the Pixelated Empathy therapeutic AI system.
 
 ## Files
 
-|File|Language|Purpose|
-|---|---|---|
-|`src/types/memory.ts`|TypeScript|Primary interface definition|
-|`ai/memory/schema.py`|Python|Pydantic dataclass mirror|
-|`ai/memory/schema.json`|JSON Schema|Validation schema|
+| File                    | Language    | Purpose                      |
+| ----------------------- | ----------- | ---------------------------- |
+| `src/types/memory.ts`   | TypeScript  | Primary interface definition |
+| `ai/memory/schema.py`   | Python      | Pydantic dataclass mirror    |
+| `ai/memory/schema.json` | JSON Schema | Validation schema            |
 
 ## Core Types
 
@@ -22,7 +22,7 @@ interface MemoryBlock {
   tenantId: string
   sessionId: string
   content: string
-  timestamp: number          // Unix ms
+  timestamp: number // Unix ms
 
   importance: MemoryImportance
   emotions: MemoryEmotions
@@ -39,24 +39,26 @@ importance = α·recency + β·relevance + γ·emotional_weight + δ·actionabil
 
 Default weights (configurable via env):
 
-|Param|Default|Description|
-|---|---|---|
-|α (alpha)|0.25|Recency weight|
-|β (beta)|0.25|Relevance weight|
-|γ (gamma)|0.30|Emotional weight|
-|δ (delta)|0.20|Actionability weight|
-|τ (tau)|7 days|Exponential decay time constant|
+| Param     | Default | Description                     |
+| --------- | ------- | ------------------------------- |
+| α (alpha) | 0.25    | Recency weight                  |
+| β (beta)  | 0.25    | Relevance weight                |
+| γ (gamma) | 0.30    | Emotional weight                |
+| δ (delta) | 0.20    | Actionability weight            |
+| τ (tau)   | 7 days  | Exponential decay time constant |
 
 ## Emotional Categories
 
-Plutchik wheel: `joy`, `sadness`, `anger`, `fear`, `surprise`, `disgust`, `trust`, `anticipation`
+Plutchik wheel: `joy`, `sadness`, `anger`, `fear`, `surprise`, `disgust`,
+`trust`, `anticipation`
 
 VAD dimensions: `valence` (-1.0 to 1.0), `arousal` (0.0 to 1.0)
 
 ## Gating Policy
 
 - **crisisFlag**: Set when emotional weight exceeds threshold (≥ 3.0x)
-- **consentGate**: `open` | `restricted` | `blocked` — controls downstream access
+- **consentGate**: `open` | `restricted` | `blocked` — controls downstream
+  access
 - **piiStatus**: `absent` | `redacted` | `present` — PII scan result
 
 ## Validation
@@ -71,4 +73,5 @@ uv run python -c "from ai.memory.schema import MemoryBlock; print('Python schema
 
 ## Parity Check
 
-TypeScript and Python schemas must remain 1:1 compatible. CI must run parity tests on every schema change.
+TypeScript and Python schemas must remain 1:1 compatible. CI must run parity
+tests on every schema change.

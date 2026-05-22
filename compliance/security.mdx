@@ -210,21 +210,21 @@ IRB-approved studies.
 ### Permission Security Features
 
 <CardGroup cols={2}>
-  <Card title='MFA-Gated Permissions' icon='shield-check'>
+  <Card title="MFA-Gated Permissions" icon="shield-check">
     Sensitive operations like `write:users`, `delete:users`,
     `export:research_data`, and `manage:roles` require step-up MFA verification
     even within an active session.
   </Card>
-  <Card title='Audit-Required Permissions' icon='clipboard-list'>
+  <Card title="Audit-Required Permissions" icon="clipboard-list">
     Every permission is flagged as `auditRequired: true`. All access to any
     resource generates an immutable audit log entry with user, action, resource,
     timestamp, and IP.
   </Card>
-  <Card title='Role Transition Validation' icon='arrows-rotate'>
+  <Card title="Role Transition Validation" icon="arrows-rotate">
     Role changes are validated through a formal transition process. Escalation
     requires MFA, approval, and generates security event logs.
   </Card>
-  <Card title='Hierarchy Enforcement' icon='layer-group'>
+  <Card title="Hierarchy Enforcement" icon="layer-group">
     Users can only assign roles below their own hierarchy level. The system
     prevents privilege escalation at the API layer regardless of client
     behavior.
@@ -336,20 +336,20 @@ const SessionMessageSchema = z.object({
 ### Protection Against Common Attacks
 
 <CardGroup cols={2}>
-  <Card title='XSS Prevention' icon='code'>
+  <Card title="XSS Prevention" icon="code">
     All output is contextually escaped. Content Security Policy (CSP) headers
     restrict script execution. User-generated content is sanitized with
     DOMPurify before rendering.
   </Card>
-  <Card title='SQL Injection' icon='database'>
+  <Card title="SQL Injection" icon="database">
     Parameterized queries used exclusively. No raw SQL string concatenation.
     ORM-level query building with automatic escaping.
   </Card>
-  <Card title='CSRF Protection' icon='rotate'>
+  <Card title="CSRF Protection" icon="rotate">
     Double-submit cookie pattern with SameSite=Strict cookies. All
     state-changing operations require CSRF token validation.
   </Card>
-  <Card title='Request Smuggling' icon='truck'>
+  <Card title="Request Smuggling" icon="truck">
     Strict HTTP parsing at the edge. Content-Length and Transfer-Encoding
     validation. Request size limits enforced at the load balancer.
   </Card>
@@ -396,22 +396,22 @@ capabilities.
 ### What Is Logged
 
 <Tabs>
-  <Tab title='Authentication Events'>
+  <Tab title="Authentication Events">
     - Login success and failure (with IP, device, location) - MFA challenge and
     verification - Token issuance, refresh, and revocation - Session creation,
     timeout, and termination - Password changes and reset requests
   </Tab>
-  <Tab title='Authorization Events'>
+  <Tab title="Authorization Events">
     - Permission checks (granted and denied) - Role assignments and removals -
     Privilege escalation attempts - Resource access decisions - RBAC policy
     evaluation results
   </Tab>
-  <Tab title='Data Access Events'>
+  <Tab title="Data Access Events">
     - PHI read, create, update, and delete operations - Data export and download
     requests - Search queries that touch PHI - Bulk data operations -
     Cross-patient data access patterns
   </Tab>
-  <Tab title='System Events'>
+  <Tab title="System Events">
     - Configuration changes - Deployment and infrastructure events - Security
     scan results - Certificate rotation - Encryption key lifecycle events
   </Tab>
@@ -459,22 +459,22 @@ capabilities.
 ## Secrets Management
 
 <CardGroup cols={2}>
-  <Card title='Environment Variables' icon='gear'>
+  <Card title="Environment Variables" icon="gear">
     Application secrets are injected via environment variables at runtime. No
     secrets are committed to source control, stored in configuration files, or
     hardcoded in application code.
   </Card>
-  <Card title='HashiCorp Vault' icon='vault'>
+  <Card title="HashiCorp Vault" icon="vault">
     Production secrets are managed through HashiCorp Vault with dynamic secret
     generation, automatic rotation, and lease-based access. Vault audit logs
     track every secret access.
   </Card>
-  <Card title='Key Rotation' icon='arrows-rotate'>
+  <Card title="Key Rotation" icon="arrows-rotate">
     All secrets — API keys, database credentials, encryption keys, and signing
     keys — are rotated on a defined schedule. Emergency rotation procedures are
     documented and tested.
   </Card>
-  <Card title='Least Privilege' icon='lock'>
+  <Card title="Least Privilege" icon="lock">
     Each service receives only the secrets it requires. Secret access policies
     are scoped per service identity, preventing lateral credential use.
   </Card>
@@ -499,26 +499,26 @@ capabilities.
 ### Automated Scanning
 
 <Tabs>
-  <Tab title='Static Analysis (SAST)'>
+  <Tab title="Static Analysis (SAST)">
     - **CodeQL** runs on every pull request with custom HIPAA-specific query
     suites - Custom queries validate: PHI handling, encryption checks, audit
     logging presence, and EHR security - Findings block merge until resolved or
     explicitly accepted with justification - HIPAA compliance mapping validates
     code changes against Security Rule requirements
   </Tab>
-  <Tab title='Dependency Scanning (SCA)'>
+  <Tab title="Dependency Scanning (SCA)">
     - Automated dependency vulnerability scanning on every build - Critical and
     high severity CVEs block deployment - License compliance checking for all
     third-party packages - Automated dependency update PRs with security
     advisories
   </Tab>
-  <Tab title='Dynamic Analysis (DAST)'>
+  <Tab title="Dynamic Analysis (DAST)">
     - Weekly automated DAST scans against staging environments - OWASP Top 10
     vulnerability coverage - API-specific security testing including
     authentication bypass and injection - Automated regression testing for
     previously identified vulnerabilities
   </Tab>
-  <Tab title='Container Scanning'>
+  <Tab title="Container Scanning">
     - Base image vulnerability scanning before deployment - Runtime container
     security monitoring - Image signing and verification in the CI/CD pipeline -
     No root containers permitted in production
@@ -545,16 +545,16 @@ Security Information and Event Management (SIEM) provides centralized visibility
 across all security controls:
 
 <CardGroup cols={3}>
-  <Card title='Real-Time Alerting' icon='bell'>
+  <Card title="Real-Time Alerting" icon="bell">
     Automated alerts for anomalous authentication patterns, PHI access spikes,
     failed authorization attempts, and known attack signatures.
   </Card>
-  <Card title='Correlation Engine' icon='link'>
+  <Card title="Correlation Engine" icon="link">
     Multi-source event correlation identifies complex attack patterns that
     individual log sources would miss — such as credential stuffing combined
     with API abuse.
   </Card>
-  <Card title='Threat Intelligence' icon='radar'>
+  <Card title="Threat Intelligence" icon="radar">
     Integrated threat intelligence feeds for IP reputation, known malware
     signatures, and emerging vulnerability exploitation patterns relevant to
     healthcare.
